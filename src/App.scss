@@ -1,0 +1,49 @@
+@use './Variables.scss' as *;
+
+.app {
+  &-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+
+    @include media-mobile {
+      flex-wrap: wrap;
+    }
+  }
+
+  &-title {
+    margin: 0;
+    margin-right: auto;
+    @include shine;
+  }
+}
+
+.game-option {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  line-height: 2;
+  padding: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  font-size: 1.125rem;
+  margin: 8px;
+  box-shadow: 3px 3px 3px #d0d0d0, -3px -3px 3px #f8f8f8;
+  cursor: pointer;
+  transition: all 300ms;
+
+  &:hover {
+    box-shadow: 12px 12px 12px #d0d0d0, -12px -12px 12px #f8f8f8;
+  }
+
+  &.active {
+    background: $bg-insta;
+    color: #ffffff;
+    box-shadow: 6px 6px 6px #d0d0d0, -6px -6px 6px #f8f8f8;
+  }
+}
+
+.v-hide {
+  @include v-hide;
+}

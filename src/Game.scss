@@ -1,0 +1,24 @@
+.stat {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0;
+  flex: 1 1 100%;
+  width: 100%;
+  text-align: center;
+  padding: 12px 20px;
+
+  &s {
+    display: flex;
+    position: sticky;
+    top: 0;
+    max-width: 400px;
+    margin: auto;
+    z-index: 100;
+    background-color: #ffffff;
+  }
+}
+
+.loading {
+  font-size: 2.5rem;
+  padding: 20px;
+}

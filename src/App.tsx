@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Game from './views/Game';
+import { fruits } from './shared/constants/fruits';
+import { Fragment, useState } from 'react';
+import Header from './components/Header';
 
 function App() {
+  const [size, setSize] = useState(
+    parseInt(localStorage.getItem('gameSize') || '18', 10)
+  );
+  const handleGameSizeSelection = (sz: number) => {
+    localStorage.setItem('gameSize', `${sz}`);
+    setSize(sz);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Header handleGameSizeSelection={handleGameSizeSelection} size={size} />
+      <Game cards={fruits} size={size}></Game>
+    </Fragment>
   );
 }
 

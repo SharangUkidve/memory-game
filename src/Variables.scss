@@ -1,0 +1,67 @@
+$bg-insta: radial-gradient(
+    circle farthest-corner at 35% 90%,
+    #fec564,
+    transparent 50%
+  ),
+  radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
+  radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
+  radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
+  radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%),
+  radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%),
+  radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
+  linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+
+@mixin shine {
+  background-image: $bg-insta;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  background-position: 50% 50%;
+
+  &:hover {
+    animation: shine 800ms infinite alternate;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 50% 70%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@mixin v-hide {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  outline: 0;
+  appearance: none;
+}
+
+@mixin media-mobile {
+  @media screen and (max-width: 700px) {
+    @content;
+  }
+}
+
+@mixin media-tablet {
+  @media screen and (min-width: 701px) {
+    @content;
+  }
+}
+
+@mixin media-desktop {
+  @media screen and (min-width: 993px) {
+    @content;
+  }
+}
