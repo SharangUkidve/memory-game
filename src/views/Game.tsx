@@ -105,9 +105,11 @@ const Game: React.FunctionComponent<GameProps> = props => {
     <div className='app-game'>
       {cards.length ? (
         <Fragment>
-          <div className='stats'>
-            <div className='stat'>Score: {score}</div>
-            <div className='stat'>Moves: {moves}</div>
+          <div className='stats-wrapper'>
+            <div className='stats'>
+              <div className='stat'>Score: {score}</div>
+              <div className='stat'>Moves: {moves}</div>
+            </div>
           </div>
 
           <div className={`cards sz-${props.size * 2}`}>

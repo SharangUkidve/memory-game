@@ -1,3 +1,5 @@
+@use './Variables.scss' as *;
+
 .stat {
   font-weight: 600;
   font-size: 1.5rem;
@@ -9,12 +11,18 @@
 
   &s {
     display: flex;
-    position: sticky;
-    top: 0;
-    max-width: 400px;
-    margin: auto;
-    z-index: 100;
-    background-color: #ffffff;
+
+    &-wrapper {
+      background-color: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    @include media-desktop {
+      margin: auto;
+      max-width: 400px;
+    }
   }
 }
 
